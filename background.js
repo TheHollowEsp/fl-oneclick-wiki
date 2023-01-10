@@ -1,8 +1,8 @@
 function openNewTab(url, position) {
-    chrome.tabs.create({url: url, active: true, index: position});
+    chrome.tabs.create({ url: url, active: true, index: position >= 0 ? position : 0 }); // Some Chromium Android forks return position -1
 }
 
-function generateConditions(request){
+function generateConditions(request) {
     let conditions = [];
 
     conditions.push(`:+`); // only request main namespace, i.e. no User:, Help:, etc pages
@@ -23,7 +23,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
     if (request.entityId != null) {
         const conditions = generateConditions(request);
-        
+
         let formData = new FormData();
         formData.append("action", "askargs");
         formData.append("format", "json");
@@ -31,7 +31,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
         formData.append("parameters", "limit=21");
         formData.append("printouts", "ID");
 
-        fetch("https://fallenlondon.wiki/w/api.php", {method: "POST", mode: "cors", body: formData})
+        fetch("https://fallenlondon.wiki/w/api.php", { method: "POST", mode: "cors", body: formData })
             .then(response => {
                 if (!response.ok) {
                     throw new Error("Server did not like our query")
@@ -45,9 +45,9 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
                 const entries = Object.entries(result.query.results);
                 if (entries.length > 0) {
-                    if (entries.length > 5){
+                    if (entries.length > 5) {
                         console.warn(`[FL 1-Click Wiki] Wiki server returned ${entries.length} results for the query '${conditions}'.\n`
-                                    + `Please notify the wiki admins about this.`);
+                            + `Please notify the wiki admins about this.`);
                     }
                     for (let [key, entry] of entries) {
                         console.debug(`[FL 1-Click Wiki] Opening tab for ${entry.fullurl}`);
