@@ -15,7 +15,7 @@
 
     function updateLocationMimic(mimicLabel, location) {
         // Get rid of the trailing comma
-        const cleanLocation = location.slice(0, location.length-1);
+        const cleanLocation = location.slice(0, location.length - 1);
         const locationLink = createLinkToWiki(cleanLocation);
 
         while (mimicLabel.firstChild) {
@@ -83,7 +83,7 @@
             if (currentStoryletId !== undefined) {
                 if (currentStoryletId != null) {
                     console.debug(`[FL 1-Click Wiki] Current storylet ID: ${currentStoryletId}`)
-                } else{
+                } else {
                     console.debug(`[FL 1-Click Wiki] Current storylet ID is not known, falling back to title...`)
                 }
 
@@ -209,7 +209,7 @@
                     if (branchContainer.classList.contains("storylet")) {
                         categories = ["Card", "Storylet"];
                     } else {
-                        categories = ["Action", "Fate Action", "Item Action", "Social Action"] ;
+                        categories = ["Action", "Fate Action", "Item Action", "Social Action"];
                     }
 
                     const wikiButton = wrapButtonInContainer(createWikiButton());
@@ -236,7 +236,7 @@
                     qualityIcon.classList.remove("cursor-default");
                     qualityIcon.classList.add("cursor-magnifier");
 
-                    qualityIcon.onclick = function(ev) {
+                    qualityIcon.onclick = function (ev) {
                         const icon = qualityIcon;
                         const associatedQuality = tooltipToQuality.get(icon.alt);
                         if (associatedQuality != null) {
@@ -255,7 +255,7 @@
                     qualityIcon.classList.remove("cursor-default");
                     qualityIcon.classList.add("cursor-magnifier");
 
-                    qualityIcon.onclick = function(ev) {
+                    qualityIcon.onclick = function (ev) {
                         const icon = qualityIcon;
                         if (icon != null) {
                             window.postMessage({
@@ -273,7 +273,7 @@
                     qualityIcon.classList.remove("cursor-default");
                     qualityIcon.classList.add("cursor-magnifier");
 
-                    qualityIcon.onclick = function(ev) {
+                    qualityIcon.onclick = function (ev) {
                         const icon = qualityIcon;
                         const associatedQuality = nameToQuality.get(icon.alt);
 
@@ -322,7 +322,7 @@
                 if (!data.isSuccess) {
                     return;
                 }
-                
+
                 for (const activePlan of data.active) {
                     for (const qualityRequirement of activePlan.branch.qualityRequirements) {
                         const plainTextTooltip = qualityRequirement.tooltip.replace(/(<([^>]+)>)/gi, "");
@@ -392,5 +392,5 @@
      */
     XMLHttpRequest.prototype.open = openBypass(XMLHttpRequest.prototype.open);
 
-    mainContentObserver.observe(document, {childList: true, subtree: true});
+    mainContentObserver.observe(document, { childList: true, subtree: true });
 }())

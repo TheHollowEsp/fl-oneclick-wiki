@@ -7,9 +7,10 @@
 Simple browser extension for [Fallen London](https://www.fallenlondon.com/) that saves you some clicks on opening FL Wiki pages about specific storylets.
 
 Grab it from:
-* [Releases page](https://github.com/lensvol/fl-oneclick-wiki/releases) (most up-to-date, see below for instructions)
-* [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/fl-1-click-wiki/)
-* [Chrome Web Store](https://chrome.google.com/webstore/detail/fl-1-click-wiki/ceakejjcdgbcocopkdkhiakkohpahien)
+
+- [Releases page](https://github.com/lensvol/fl-oneclick-wiki/releases) (most up-to-date, see below for instructions)
+- [Firefox Addons](https://addons.mozilla.org/en-US/firefox/addon/fl-1-click-wiki/)
+- [Chrome Web Store](https://chrome.google.com/webstore/detail/fl-1-click-wiki/ceakejjcdgbcocopkdkhiakkohpahien)
 
 ## Manual installation
 
@@ -36,10 +37,11 @@ Grab it from:
 2. Unzip that file somewhere on your computer.
 3. Open **opera:extensions** page.
 4. Enable "Developer Mode" (top right corner).
-6. Click **Load unpacked** and select the folder where you unzipped the file.
+5. Click **Load unpacked** and select the folder where you unzipped the file.
 
 ## Special thanks
-* Asarta - for supplying valuable ideas (but not solutions, tho).
-* [MadeOfMagicAndWires](https://github.com/MadeOfMagicAndWires) - for fixing the issue with button appearing _everywhere_.
-* [Thorsb](https://github.com/thorsb) - for bringing his expertise about FL Wiki and fixing things.
-* [Konstantin Kotenko](https://github.com/kkotenko) - for his tireless efforts on keeping us in sync with the reality.
+
+- Asarta - for supplying valuable ideas (but not solutions, tho).
+- [MadeOfMagicAndWires](https://github.com/MadeOfMagicAndWires) - for fixing the issue with button appearing _everywhere_.
+- [Thorsb](https://github.com/thorsb) - for bringing his expertise about FL Wiki and fixing things.
+- [Konstantin Kotenko](https://github.com/kkotenko) - for his tireless efforts on keeping us in sync with the reality.

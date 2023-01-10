@@ -30,12 +30,14 @@
     "48": "/images/fl-wiki-icon-48.png",
     "128": "/images/fl-wiki-icon-128.png"
   },
-  "web_accessible_resources": [{
-    "resources": [
-      "inject.js"
-    ],
-    "matches": [
-      "https://*.fallenlondon.com/*"
-    ]
-  }]
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "inject.js"
+      ],
+      "matches": [
+        "https://*.fallenlondon.com/*"
+      ]
+    }
+  ]
 }
